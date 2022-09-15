@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JL8-Hv-yHR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fooderland-->
+        <scene sceneID="OMt-Ys-lZG">
+            <objects>
+                <viewController id="LvI-XC-Cak" customClass="MenuVC" customModule="Food_Order_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8B2-np-A1z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Zc-flx">
+                                <rect key="frame" x="0.0" y="180" width="414" height="633"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dD9-sJ-uuJ">
+                                    <size key="itemSize" width="287" height="326"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuCollectionViewCell" id="s1c-a6-c7K" customClass="MenuCollectionViewCell" customModule="Food_Order_App" customModuleProvider="target">
+                                        <rect key="frame" x="63.5" y="0.0" width="287" height="326"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iEF-Mu-qe5">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="326"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiyat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-Kj-NOL">
+                                                    <rect key="frame" x="16" y="217" width="255" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                    <color key="textColor" systemColor="systemIndigoColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-vB-t97">
+                                                    <rect key="frame" x="32" y="2.5" width="223" height="123.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="wof-kW-uHl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdi-Ue-4Bn">
+                                                    <rect key="frame" x="16" y="136" width="255" height="65"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yemek Adı" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-1Z-enf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="30"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="MQw-e7-c1s"/>
+                                                        <constraint firstItem="6Ad-1Z-enf" firstAttribute="leading" secondItem="Wdi-Ue-4Bn" secondAttribute="leading" id="ZSn-bo-g5k"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6Ad-1Z-enf" secondAttribute="trailing" id="yct-yf-CzR"/>
+                                                        <constraint firstItem="6Ad-1Z-enf" firstAttribute="top" secondItem="Wdi-Ue-4Bn" secondAttribute="top" id="zKX-SH-u3V"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cBO-Kj-NOL" firstAttribute="top" secondItem="Wdi-Ue-4Bn" secondAttribute="bottom" constant="16" id="CIZ-t6-jEz"/>
+                                                <constraint firstItem="pLg-vB-t97" firstAttribute="top" secondItem="iEF-Mu-qe5" secondAttribute="top" id="Kv0-qY-CbT"/>
+                                                <constraint firstItem="Wdi-Ue-4Bn" firstAttribute="top" secondItem="pLg-vB-t97" secondAttribute="bottom" constant="8" symbolic="YES" id="LTh-Q1-Qb2"/>
+                                                <constraint firstItem="Wdi-Ue-4Bn" firstAttribute="leading" secondItem="iEF-Mu-qe5" secondAttribute="leading" constant="16" id="Pyh-nr-586"/>
+                                                <constraint firstAttribute="trailing" secondItem="pLg-vB-t97" secondAttribute="trailing" constant="32" id="eDK-Nu-Mj0"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wdi-Ue-4Bn" secondAttribute="trailing" constant="16" id="egC-V1-yax"/>
+                                                <constraint firstAttribute="trailing" secondItem="cBO-Kj-NOL" secondAttribute="trailing" constant="16" id="kyR-Fe-9sp"/>
+                                                <constraint firstItem="pLg-vB-t97" firstAttribute="leading" secondItem="iEF-Mu-qe5" secondAttribute="leading" constant="32" id="lrZ-tD-dcR"/>
+                                                <constraint firstItem="cBO-Kj-NOL" firstAttribute="leading" secondItem="iEF-Mu-qe5" secondAttribute="leading" constant="16" id="z08-Cj-ViI"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="287" height="326"/>
+                                        <connections>
+                                            <outlet property="foodImageView" destination="pLg-vB-t97" id="lgA-qC-iWu"/>
+                                            <outlet property="foodNameLabel" destination="6Ad-1Z-enf" id="uAO-0A-ar4"/>
+                                            <outlet property="foodPriceLabel" destination="cBO-Kj-NOL" id="nhH-XD-QTN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CC7-p8-FSl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-aw-I5D">
+                                <rect key="frame" x="0.0" y="139" width="414" height="32"/>
+                                <color key="backgroundColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="0.40277746339507453" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Varsayılan"/>
+                                    <segment title="Artan Fiyat"/>
+                                    <segment title="Azalan Fiyat"/>
+                                    <segment title="Yemek Ad"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <action selector="sortSegmentedControl:" destination="LvI-XC-Cak" eventType="valueChanged" id="b71-eW-5dl"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X4t-As-Hoe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CC7-p8-FSl" firstAttribute="top" secondItem="X4t-As-Hoe" secondAttribute="top" id="29t-eG-9MY"/>
+                            <constraint firstItem="XzZ-Zc-flx" firstAttribute="trailing" secondItem="X4t-As-Hoe" secondAttribute="trailing" id="47r-NP-mdy"/>
+                            <constraint firstItem="LBQ-aw-I5D" firstAttribute="top" secondItem="CC7-p8-FSl" secondAttribute="bottom" id="78W-cK-pEh"/>
+                            <constraint firstItem="CC7-p8-FSl" firstAttribute="leading" secondItem="X4t-As-Hoe" secondAttribute="leading" id="FAw-dF-cjY"/>
+                            <constraint firstItem="XzZ-Zc-flx" firstAttribute="bottom" secondItem="X4t-As-Hoe" secondAttribute="bottom" id="THz-FT-T3a"/>
+                            <constraint firstItem="XzZ-Zc-flx" firstAttribute="leading" secondItem="X4t-As-Hoe" secondAttribute="leading" id="TJ0-i7-A2N"/>
+                            <constraint firstItem="XzZ-Zc-flx" firstAttribute="top" secondItem="LBQ-aw-I5D" secondAttribute="bottom" constant="10" id="UZ3-ir-api"/>
+                            <constraint firstItem="LBQ-aw-I5D" firstAttribute="leading" secondItem="X4t-As-Hoe" secondAttribute="leading" id="VqF-b7-8em"/>
+                            <constraint firstItem="X4t-As-Hoe" firstAttribute="trailing" secondItem="LBQ-aw-I5D" secondAttribute="trailing" id="dhk-YM-Rxd"/>
+                            <constraint firstItem="CC7-p8-FSl" firstAttribute="trailing" secondItem="X4t-As-Hoe" secondAttribute="trailing" id="yi8-bz-J2U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fooderland" id="Bf9-Al-SX6">
+                        <barButtonItem key="backBarButtonItem" title="Menu" id="M25-Ew-vrZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="XzZ-Zc-flx" id="QaY-eL-LSB"/>
+                        <outlet property="searchBar" destination="CC7-p8-FSl" id="ED3-xw-AmJ"/>
+                        <outlet property="sordSegmentedControl" destination="LBQ-aw-I5D" id="Nrz-eL-Eog"/>
+                        <segue destination="HBX-aa-hdL" kind="presentation" identifier="toDetay" id="fpm-iP-DBp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGW-7m-GCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4989.8550724637689" y="319.41964285714283"/>
+        </scene>
+        <!--Detay-->
+        <scene sceneID="kPe-v0-MzA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detay" id="HBX-aa-hdL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZHs-SS-cDa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82w-dC-zYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5723" y="319"/>
+        </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="OAS-0E-cgf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="cxA-DO-WWa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Wy5-bQ-RwL"/>
+                    <navigationItem key="navigationItem" id="DOy-oS-JFm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cia-Mi-oHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3154" y="738"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8hV-IA-D4X">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="JL8-Hv-yHR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="Mcg-eK-v7E">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemIndigoColor"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aph-aa-Oc8" kind="relationship" relationship="viewControllers" id="IQZ-Na-mNl"/>
+                        <segue destination="cxA-DO-WWa" kind="relationship" relationship="viewControllers" id="Arq-6t-P6i"/>
+                        <segue destination="EyE-JD-FQV" kind="relationship" relationship="viewControllers" id="n1Y-co-cCY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lo-Hn-1ug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3238" y="319"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="xEW-ri-8Sz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="EyE-JD-FQV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="EMW-GI-0HE"/>
+                    <navigationItem key="navigationItem" id="eH0-eG-Ekl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ae-Z3-bL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="738"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="lI0-xL-lii">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aph-aa-Oc8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Menu" image="list.bullet" catalog="system" id="H8X-Qg-ePY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oh8-xS-k6b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LvI-XC-Cak" kind="relationship" relationship="rootViewController" id="VQz-HF-cz1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2PM-Y0-ix8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4083" y="320"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="pencil.slash" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
