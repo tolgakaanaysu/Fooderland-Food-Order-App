@@ -1,7 +1,7 @@
 # Fooderland Mobil App
 
 
-- ## Usage Technology
+- ## Used Technology
   - VIPER
   - Rest Api
   - Firebase
