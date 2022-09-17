@@ -7,6 +7,7 @@
 
 import UIKit
 import ProgressHUD
+import FirebaseAuth
 class LoginVC: UIViewController {
 
     @IBOutlet var emailTextField: UITextField!
@@ -18,7 +19,10 @@ class LoginVC: UIViewController {
         LoginRouter.createModule(ref: self)
 
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        let username = Auth.auth().currentUser?.displayName
+        print(username ?? "Kullancı adı alınamadı")
+    }
     @IBAction func enterButton(_ sender: Any) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -27,7 +31,7 @@ class LoginVC: UIViewController {
            ProgressHUD.showError("Email ve şifre boş olamaz")
             return
        }
-
+  
         loginPresenter?.signIn(email: email, password: password)
         
         
@@ -50,6 +54,7 @@ extension LoginVC: PresenterToViewLoginProtocol {
             print("giriş başarılı")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.performSegue(withIdentifier: "goToMenuVC", sender: nil)
+                self.loginPresenter?.getUsername()
             }
            
         }
