@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7855E84F28D3234F0091F5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E84E28D3234F0091F5B4 /* AppDelegate.swift */; };
 		7855E85128D3234F0091F5B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E85028D3234F0091F5B4 /* SceneDelegate.swift */; };
-		7855E85328D3234F0091F5B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E85228D3234F0091F5B4 /* ViewController.swift */; };
 		7855E85628D3234F0091F5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7855E85428D3234F0091F5B4 /* Main.storyboard */; };
 		7855E85828D323510091F5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7855E85728D323510091F5B4 /* Assets.xcassets */; };
 		7855E85B28D323510091F5B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7855E85928D323510091F5B4 /* LaunchScreen.storyboard */; };
@@ -69,16 +68,16 @@
 		7855E90328D324D30091F5B4 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90228D324D30091F5B4 /* ProgressHUD */; };
 		7855E90628D3258D0091F5B4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90528D3258D0091F5B4 /* FirebaseAuth */; };
 		7855E90928D3263A0091F5B4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90828D3263A0091F5B4 /* Kingfisher */; };
-		7855E90B28D329570091F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7855E90A28D329570091F5B4 /* GoogleService-Info.plist */; };
 		7855E90F28D32C400091F5B4 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7855E90E28D32C400091F5B4 /* Onboarding.storyboard */; };
 		7855E91328D32CEB0091F5B4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E91228D32CEB0091F5B4 /* OnboardingVC.swift */; };
+		7855E91528D5B2610091F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */; };
+		7855E91728D5C9430091F5B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E91628D5C9420091F5B4 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7855E84B28D3234F0091F5B4 /* Fooderland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooderland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7855E84E28D3234F0091F5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7855E85028D3234F0091F5B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7855E85228D3234F0091F5B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7855E85528D3234F0091F5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7855E85728D323510091F5B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7855E85A28D323510091F5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,9 +134,10 @@
 		7855E8F728D324450091F5B4 /* YemeklerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YemeklerResponse.swift; sourceTree = "<group>"; };
 		7855E8F828D324450091F5B4 /* Yemekler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yemekler.swift; sourceTree = "<group>"; };
 		7855E8F928D324450091F5B4 /* SepetYemekler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepetYemekler.swift; sourceTree = "<group>"; };
-		7855E90A28D329570091F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7855E90E28D32C400091F5B4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		7855E91228D32CEB0091F5B4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7855E91628D5C9420091F5B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,12 +180,11 @@
 				7855E86228D323E20091F5B4 /* Modules */,
 				7855E84E28D3234F0091F5B4 /* AppDelegate.swift */,
 				7855E85028D3234F0091F5B4 /* SceneDelegate.swift */,
-				7855E85228D3234F0091F5B4 /* ViewController.swift */,
 				7855E85428D3234F0091F5B4 /* Main.storyboard */,
 				7855E85728D323510091F5B4 /* Assets.xcassets */,
 				7855E85928D323510091F5B4 /* LaunchScreen.storyboard */,
 				7855E85C28D323510091F5B4 /* Info.plist */,
-				7855E90A28D329570091F5B4 /* GoogleService-Info.plist */,
+				7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */,
 			);
 			path = Fooderland;
 			sourceTree = "<group>";
@@ -596,6 +595,7 @@
 				7855E8F728D324450091F5B4 /* YemeklerResponse.swift */,
 				7855E8F828D324450091F5B4 /* Yemekler.swift */,
 				7855E8F928D324450091F5B4 /* SepetYemekler.swift */,
+				7855E91628D5C9420091F5B4 /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -670,7 +670,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7855E90B28D329570091F5B4 /* GoogleService-Info.plist in Resources */,
+				7855E91528D5B2610091F5B4 /* GoogleService-Info.plist in Resources */,
 				7855E8BC28D323E30091F5B4 /* Menu.storyboard in Resources */,
 				7855E8C428D323E30091F5B4 /* Payment.storyboard in Resources */,
 				7855E90F28D32C400091F5B4 /* Onboarding.storyboard in Resources */,
@@ -702,7 +702,6 @@
 				7855E8D928D323E30091F5B4 /* OrderStateVC.swift in Sources */,
 				7855E8C028D323E30091F5B4 /* MenuRouter.swift in Sources */,
 				7855E8FB28D324450091F5B4 /* YemeklerResponse.swift in Sources */,
-				7855E85328D3234F0091F5B4 /* ViewController.swift in Sources */,
 				7855E8BF28D323E30091F5B4 /* MenuInteractor.swift in Sources */,
 				7855E8B828D323E30091F5B4 /* LoginInteractor.swift in Sources */,
 				7855E8CF28D323E30091F5B4 /* CartCell.swift in Sources */,
@@ -714,6 +713,7 @@
 				7855E8DB28D323E30091F5B4 /* OnboardingCollectionViewCell.swift in Sources */,
 				7855E8CA28D323E30091F5B4 /* FoodDetailsRouter.swift in Sources */,
 				7855E8CB28D323E30091F5B4 /* ShoppingCartPresenter.swift in Sources */,
+				7855E91728D5C9430091F5B4 /* User.swift in Sources */,
 				7855E8BE28D323E30091F5B4 /* MenuVC.swift in Sources */,
 				7855E85128D3234F0091F5B4 /* SceneDelegate.swift in Sources */,
 				7855E8BB28D323E30091F5B4 /* MenuProtocols.swift in Sources */,

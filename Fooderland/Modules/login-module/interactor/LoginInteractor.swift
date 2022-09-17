@@ -16,6 +16,9 @@ class LoginInteractor: PresenterToInteractorLoginProtocol {
     func signIn(email: String, password: String) {
         networkService?.signIn(email: email, password: password)
     }
+    func getUsername() {
+        networkService?.getUsername()
+    }
 }
 
 extension LoginInteractor: NetworkServiceToLoginInteractorProtocol {

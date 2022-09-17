@@ -12,8 +12,8 @@ class RegisterInteractor: PresenterToInteractorRegisterProtocol {
     var registerPresenter: InteractorToPresenterRegisterProtocol?
     var networkService: InteractorToNetworkServiceProtocol?
     
-    func createUser(email: String, password: String) {
-        networkService?.createUser(email: email, password: password)
+    func createUser(email: String, password: String, username: String) {
+        networkService?.createUser(email: email, password: password, username: username)
     }
 }
 

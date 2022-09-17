@@ -29,9 +29,11 @@ protocol InteractorToNetworkServiceProtocol {
     
     func updateCart(food: SepetYemekler, quantity: Int)
     
-    func createUser(email: String, password: String)
+    func createUser(email: String, password: String, username: String)
     
     func signIn(email: String, password: String)
+    
+    func getUsername()
     
 }
 

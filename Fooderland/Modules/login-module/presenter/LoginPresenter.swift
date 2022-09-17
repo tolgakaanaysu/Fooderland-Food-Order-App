@@ -8,6 +8,10 @@ class LoginPresenter: ViewToPresenterLoginProtocol {
     func signIn(email: String, password: String) {
         loginInteractor?.signIn(email: email, password: password)
     }
+    
+    func getUsername() {
+        loginInteractor?.getUsername()
+    }
 }
 
 extension LoginPresenter: InteractorToPresenterLoginProtocol {

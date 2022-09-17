@@ -7,6 +7,8 @@ protocol ViewToPresenterLoginProtocol {
     var loginView: PresenterToViewLoginProtocol? { get set }
     
     func signIn(email: String, password: String)
+    
+    func getUsername()
 
 }
 
@@ -16,6 +18,8 @@ protocol PresenterToInteractorLoginProtocol {
     var networkService: InteractorToNetworkServiceProtocol? { get set }
     
     func signIn(email: String, password: String)
+    
+    func getUsername()
 
 }
 

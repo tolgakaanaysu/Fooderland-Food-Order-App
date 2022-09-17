@@ -16,6 +16,7 @@ class RegisterVC: UIViewController {
     @IBOutlet var userRepasswordLabel: UITextField!
     var registerPresenter: ViewToPresenterRegisterProtocol?
     
+    @IBOutlet var usernameLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         RegisterRouter.createModule(ref: self)
@@ -26,14 +27,15 @@ class RegisterVC: UIViewController {
         guard let email = userEmailLabel.text else { return }
         guard let password = userPasswordLabel.text else { return }
         guard let rePassword = userRepasswordLabel.text else { return }
+        guard let username = usernameLabel.text else { return }
         
-        if password == "" || email == "" || rePassword == "" {
+        if password == "" || email == "" || rePassword == "" || username == "" {
            ProgressHUD.showFailed("Email ve şifre boş olamaz")
             return
        }
         
         if password == rePassword {
-            registerPresenter?.createUser(email: email, password: password)
+            registerPresenter?.createUser(email: email, password: password, username: username)
         }
         else {
             ProgressHUD.showFailed("Şifreler eşleşmedi")

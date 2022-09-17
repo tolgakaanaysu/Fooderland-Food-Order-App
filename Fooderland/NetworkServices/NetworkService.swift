@@ -47,14 +47,17 @@ class NetworkService: InteractorToNetworkServiceProtocol {
         restApiService?.updateCart(food: food, quantity: quantity)
     }
     
-    func createUser(email: String, password: String) {
-        firebaseService?.createUser(email: email, password: password)
+    func createUser(email: String, password: String, username: String) {
+        firebaseService?.createUser(email: email, password: password, username: username )
     }
     
     func signIn(email: String, password: String) {
         firebaseService?.signIn(email: email, password: password)
     }
     
+    func getUsername() {
+        firebaseService?.getUsername()
+    }
 }
 
 extension NetworkService: RestApiServiceToNetworkService {
@@ -77,8 +80,4 @@ extension NetworkService: FirebaseServiceToNetworkService {
         loginInteractor?.sendError(error: error)
         registerInteractor?.sendError(error: error)
     }
-}
-
-enum User: String {
-    case usernameInfo = "tolgakagan"
 }

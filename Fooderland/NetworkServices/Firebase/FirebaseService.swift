@@ -10,6 +10,7 @@ import FirebaseAuth
 
 class FirebaseService: NetworkServiceToFirebaseService {
     var networkService: FirebaseServiceToNetworkService?
+    
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
@@ -24,16 +25,38 @@ class FirebaseService: NetworkServiceToFirebaseService {
         }
     }
     
-    func createUser(email: String, password: String) {
+    func createUser(email: String, password: String, username: String) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             guard let strongSelf = self else { return }
             
             if error == nil  {
-                strongSelf.networkService?.sendError(error: nil)
+                strongSelf.updateUser(username: username)
         
-            }else {
+            } else {
                 strongSelf.networkService?.sendError(error: error)
             }
         }
+    }
+    
+    func updateUser(username: String){
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = username
+        changeRequest?.commitChanges(completion: {[weak self] error in
+            guard let strongSelf = self else { return }
+            if error == nil {
+                strongSelf.networkService?.sendError(error: nil)
+            }else {
+                strongSelf.networkService?.sendError(error: error)
+            }
+        })
+    }
+    
+     func getUsername() {
+        guard let username = Auth.auth().currentUser?.displayName else {
+            print("nil username firebase service")
+            return
+        }
+         User.username = username
+         
     }
 }

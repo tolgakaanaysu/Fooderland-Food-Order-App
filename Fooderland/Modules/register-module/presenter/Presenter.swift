@@ -12,8 +12,8 @@ class RegisterPresenter: ViewToPresenterRegisterProtocol {
     var registerInteractor: PresenterToInteractorRegisterProtocol?
     var registerView: PresenterToViewRegisterProtocol?
     
-    func createUser(email: String, password: String) {
-        registerInteractor?.createUser(email: email, password: password)
+    func createUser(email: String, password: String, username: String) {
+        registerInteractor?.createUser(email: email, password: password,username: username)
      
     }
 }

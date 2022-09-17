@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 protocol NetworkServiceToRestApiService {
-    
     var networkService: RestApiServiceToNetworkService? { get set }
     
     func getAllFoods()
