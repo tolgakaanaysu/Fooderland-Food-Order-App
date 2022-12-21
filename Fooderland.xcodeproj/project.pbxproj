@@ -70,7 +70,6 @@
 		7855E90928D3263A0091F5B4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90828D3263A0091F5B4 /* Kingfisher */; };
 		7855E90F28D32C400091F5B4 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7855E90E28D32C400091F5B4 /* Onboarding.storyboard */; };
 		7855E91328D32CEB0091F5B4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E91228D32CEB0091F5B4 /* OnboardingVC.swift */; };
-		7855E91528D5B2610091F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */; };
 		7855E91728D5C9430091F5B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E91628D5C9420091F5B4 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,7 +135,6 @@
 		7855E8F928D324450091F5B4 /* SepetYemekler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepetYemekler.swift; sourceTree = "<group>"; };
 		7855E90E28D32C400091F5B4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		7855E91228D32CEB0091F5B4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-		7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7855E91628D5C9420091F5B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,7 +182,6 @@
 				7855E85728D323510091F5B4 /* Assets.xcassets */,
 				7855E85928D323510091F5B4 /* LaunchScreen.storyboard */,
 				7855E85C28D323510091F5B4 /* Info.plist */,
-				7855E91428D5B2610091F5B4 /* GoogleService-Info.plist */,
 			);
 			path = Fooderland;
 			sourceTree = "<group>";
@@ -670,7 +667,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7855E91528D5B2610091F5B4 /* GoogleService-Info.plist in Resources */,
 				7855E8BC28D323E30091F5B4 /* Menu.storyboard in Resources */,
 				7855E8C428D323E30091F5B4 /* Payment.storyboard in Resources */,
 				7855E90F28D32C400091F5B4 /* Onboarding.storyboard in Resources */,
