@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterRouter: PresenterToRouterRegisterProtocol {
+final class RegisterRouter: PresenterToRouterRegisterProtocol {
     static func createModule(ref :RegisterVC) {
         let presenter = RegisterPresenter()
         let interactor = RegisterInteractor()

@@ -1,7 +1,7 @@
 
 import Foundation
 
-class LoginPresenter: ViewToPresenterLoginProtocol {
+final class LoginPresenter: ViewToPresenterLoginProtocol {
     var loginInteractor: PresenterToInteractorLoginProtocol?
     var loginView: PresenterToViewLoginProtocol?
     

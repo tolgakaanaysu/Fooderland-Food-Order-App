@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FoodDetailsPresenter: ViewToPresenterFoodDetailsProtocol {
+final class FoodDetailsPresenter: ViewToPresenterFoodDetailsProtocol {
     var detailsView: PresenterToViewFoodDetailsProtocol?
     var detailsInteractor: PresenterToInteractorFoodDetailsProtocol?
     

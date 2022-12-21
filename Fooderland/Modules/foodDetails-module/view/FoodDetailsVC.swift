@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-class FoodDetailsVC: UIViewController {
+final class FoodDetailsVC: UIViewController {
 
     @IBOutlet var foodImageView: UIImageView!
     @IBOutlet var foodNameLabel: UILabel!

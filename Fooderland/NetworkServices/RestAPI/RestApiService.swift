@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 import FirebaseAuth
-class RestApiService: NetworkServiceToRestApiService {
+final class RestApiService: NetworkServiceToRestApiService {
     var networkService: RestApiServiceToNetworkService?
     var username: String? {
         return User.username
@@ -37,10 +37,6 @@ class RestApiService: NetworkServiceToRestApiService {
     
     //MARK: - getFoodsInCart
     func getFoodsInCart() {
-        guard self.username != nil else {
-            print("nil username")
-            return
-        }
         let urlStr = RESTAPI.sepetiGetir
         let params = ["kullanici_adi": username]
         
@@ -157,16 +153,12 @@ extension RestApiService {
      
     
      func addToShoppingCart(food: Food, food_quantity: String) {
-         guard self.username != nil else {
-             print("nil username")
-             return
-         }
          let urlStr = RESTAPI.sepeteEkle
          let params: Parameters = ["yemek_adi": food.name!,
                                    "yemek_resim_adi": food.imageName!,
                                    "yemek_fiyat": Int(food.price!)!,
                                    "yemek_siparis_adet": Int(food_quantity)!,
-                                   "kullanici_adi": username!]
+                                   "kullanici_adi": username]
          
          AF.request(urlStr,method: .post, parameters: params).response{ response in
              if let data = response.data {
@@ -207,7 +199,7 @@ extension RestApiService {
                                   "yemek_resim_adi": food.imageName!,
                                   "yemek_fiyat": Int(food.price!)!,
                                   "yemek_siparis_adet": quantity,
-                                  "kullanici_adi": username!]
+                                  "kullanici_adi": username]
         
         AF.request(addApi,method: .post, parameters: params).response{ response in
             if let data = response.data {
@@ -240,6 +232,5 @@ extension RestApiService {
             total += calculateFoodCost(food_quantitiy: i.quaintity!,
                                        food_price: i.price!)
         }
-        networkService?.sendTotalCost(total: String(total))
     }
 }

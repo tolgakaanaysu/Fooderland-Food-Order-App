@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class MenuInteractor: PresenterToInteractorMenuProtocol {
+final class MenuInteractor: PresenterToInteractorMenuProtocol {
     
     
     var networkService: InteractorToNetworkServiceProtocol?

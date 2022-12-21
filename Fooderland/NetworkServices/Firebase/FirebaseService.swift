@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class FirebaseService: NetworkServiceToFirebaseService {
+final class FirebaseService: NetworkServiceToFirebaseService {
     var networkService: FirebaseServiceToNetworkService?
     
     func signIn(email: String, password: String) {

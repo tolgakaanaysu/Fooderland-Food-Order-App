@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftUI
 
-class NetworkService: InteractorToNetworkServiceProtocol {
+final class NetworkService: InteractorToNetworkServiceProtocol {
     
     var shoppingCartInteractor: NetworkServiceToShoppingCartInteractorProtocol?
     var menuInteractor: NetworkServiceToMenuInteractorProtocol?

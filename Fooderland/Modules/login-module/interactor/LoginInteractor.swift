@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginInteractor: PresenterToInteractorLoginProtocol {
+final class LoginInteractor: PresenterToInteractorLoginProtocol {
     var networkService: InteractorToNetworkServiceProtocol?
     
     var loginPresenter: InteractorToPresenterLoginProtocol?

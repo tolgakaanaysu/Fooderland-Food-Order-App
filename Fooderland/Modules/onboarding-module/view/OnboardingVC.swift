@@ -7,11 +7,11 @@
 
 import UIKit
 
-class OnboardingVC: UIViewController {
+final class OnboardingVC: UIViewController {
     
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var startButton: UIButton!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var startButton: UIButton!
     
     var onboardingSlider: [OnboardingModel] = []
     var currentPage = 0

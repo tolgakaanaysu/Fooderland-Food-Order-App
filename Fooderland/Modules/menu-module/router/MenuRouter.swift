@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MenuRouter: PresenterToRouterMenuProtocol {
+final class MenuRouter: PresenterToRouterMenuProtocol {
     static func createModule(ref: MenuVC) {
         let presenter = MenuPresenter()
         let interactor = MenuInteractor()

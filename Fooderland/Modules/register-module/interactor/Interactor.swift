@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterInteractor: PresenterToInteractorRegisterProtocol {
+final class RegisterInteractor: PresenterToInteractorRegisterProtocol {
     
     var registerPresenter: InteractorToPresenterRegisterProtocol?
     var networkService: InteractorToNetworkServiceProtocol?

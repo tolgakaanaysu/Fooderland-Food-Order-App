@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-class FoodDetailsInteractor: PresenterToInteractorFoodDetailsProtocol {
+final class FoodDetailsInteractor: PresenterToInteractorFoodDetailsProtocol {
     var detailsPresenter: InteractorToPresenteFoodDetailsProtcol?
     var networkService: InteractorToNetworkServiceProtocol?
     

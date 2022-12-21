@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShoppingCartRouter: PresenterToRouterShoppingCartProtocol {
+final class ShoppingCartRouter: PresenterToRouterShoppingCartProtocol {
     static func createModule(ref: ShoppingCartVC) {
         let presenter = ShoppingCartPresenter()
         let interactor =  ShoppinCartInteractor()

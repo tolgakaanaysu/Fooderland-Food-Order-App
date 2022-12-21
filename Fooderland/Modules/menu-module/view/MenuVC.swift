@@ -8,11 +8,12 @@
 import UIKit
 import Kingfisher
 import FirebaseAuth
-class MenuVC: UIViewController {
+final class MenuVC: UIViewController {
     
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var sordSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var sordSegmentedControl: UISegmentedControl!
+    
     var menuPresenter: ViewToPresenterMenuProtocol?
     var filterFoodList: [Food] = []
     var mainFoodList: [Food] = []
@@ -27,8 +28,6 @@ class MenuVC: UIViewController {
         design()
         searchBarConfig()
      
-       
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,14 +64,13 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let food = filterFoodList[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuVCIdentifiers.menuCollectionViewCell.rawValue, for: indexPath) as! MenuCollectionViewCell
-        cell.foodPriceLabel.text = "\(food.price ?? "N/A") ₺"
-        cell.foodNameLabel.text = food.name
+       
+        cell.configureCell(with: food)
+        //FIXME: ımage view
         cell.foodImageView.kf.setImage(with: takeImages(yemek_resim_adi: food.imageName!),
                                        placeholder: UIImage.actions)
     
-        cell.layer.cornerRadius = 30
-        cell.backgroundColor = .cellBackgroundColor
-        cell.layer.borderWidth = 0.1
+      
 
         return cell
     }

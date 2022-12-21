@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingCollectionViewCell: UICollectionViewCell {
+final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var sloganLabel: UILabel!

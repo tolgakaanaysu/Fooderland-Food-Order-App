@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class RESTAPI {
+final class RESTAPI {
     static let yemekleriGetir = "http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php"
     static let sepettenSil =  "http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php"
     static let sepeteEkle = "http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php"

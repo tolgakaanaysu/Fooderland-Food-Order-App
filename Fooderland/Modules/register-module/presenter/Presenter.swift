@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterPresenter: ViewToPresenterRegisterProtocol {
+final class RegisterPresenter: ViewToPresenterRegisterProtocol {
    
     var registerInteractor: PresenterToInteractorRegisterProtocol?
     var registerView: PresenterToViewRegisterProtocol?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FoodDetailsRouter:PresenterToRouterFoodDetailsProtocol {
+final class FoodDetailsRouter:PresenterToRouterFoodDetailsProtocol {
     static func createModule(ref: FoodDetailsVC) {
         
         // View

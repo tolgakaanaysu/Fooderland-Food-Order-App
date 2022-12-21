@@ -8,10 +8,10 @@
 import UIKit
 import ProgressHUD
 import FirebaseAuth
-class LoginVC: UIViewController {
+final class LoginVC: UIViewController {
 
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     var loginPresenter: ViewToPresenterLoginProtocol?
     override func viewDidLoad() {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MenuPresenter: ViewToPresenterMenuProtocol {
+final class MenuPresenter: ViewToPresenterMenuProtocol {
     var menuInteractor: PresenterToInteractorMenuProtocol?
     var menuView: PresenterToViewMenuProtocol?
     

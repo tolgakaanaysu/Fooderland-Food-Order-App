@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 import ProgressHUD
-class ShoppingCartVC: UIViewController {
+final class ShoppingCartVC: UIViewController {
     
     @IBOutlet var sepetBosView: UIView!
     @IBOutlet var tableView: UITableView!

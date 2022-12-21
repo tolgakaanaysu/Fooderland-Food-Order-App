@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShoppingCartPresenter: ViewToPresenterShoppingCartProtocol {
+final class ShoppingCartPresenter: ViewToPresenterShoppingCartProtocol {
     var shoppingCartInteractor: PresenterToInteractorShoppingCartProtocol?
     var shoppingCartView: PresenterToViewShoppingCartProtocol?
     

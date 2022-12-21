@@ -8,12 +8,10 @@
 import UIKit
 import ProgressHUD
 
-class RegisterVC: UIViewController {
-    
-    
-    @IBOutlet var userEmailLabel: UITextField!
-    @IBOutlet var userPasswordLabel: UITextField!
-    @IBOutlet var userRepasswordLabel: UITextField!
+final class RegisterVC: UIViewController {
+    @IBOutlet private weak var userEmailLabel: UITextField!
+    @IBOutlet private weak var userPasswordLabel: UITextField!
+    @IBOutlet private weak var userRepasswordLabel: UITextField!
     var registerPresenter: ViewToPresenterRegisterProtocol?
     
     @IBOutlet var usernameLabel: UITextField!
