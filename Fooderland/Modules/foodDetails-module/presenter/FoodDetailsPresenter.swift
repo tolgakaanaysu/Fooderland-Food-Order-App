@@ -11,7 +11,7 @@ class FoodDetailsPresenter: ViewToPresenterFoodDetailsProtocol {
     var detailsView: PresenterToViewFoodDetailsProtocol?
     var detailsInteractor: PresenterToInteractorFoodDetailsProtocol?
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
+    func addToShoppingCart(food: Food, food_quantity: String) {
         detailsInteractor?.addToShoppingCart(food: food,food_quantity: food_quantity)
     }
     

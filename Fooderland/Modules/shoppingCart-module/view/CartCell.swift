@@ -15,7 +15,7 @@ class CartCell: UITableViewCell {
     @IBOutlet var foodPriceLabel: UILabel!
     @IBOutlet var foodTotalLabel: UILabel!
     var shoppingCartPresenter: ViewToPresenterShoppingCartProtocol?
-    var food: SepetYemekler?
+    var food: FoodCart?
     var totalLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +31,7 @@ class CartCell: UITableViewCell {
     @IBAction func customStepperButton(_ sender: UIButton) {
         var quantity = Int(foodQuantityLabel.text!)!
         var totalCostCart = Int(totalLabel.text!)!
-        let price = Int(food!.yemek_fiyat!)!
+        let price = Int(food!.price!)!
         
         switch sender.tag {
         case 1:

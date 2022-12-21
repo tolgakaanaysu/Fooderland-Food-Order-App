@@ -12,7 +12,7 @@ protocol ViewToPresenterFoodDetailsProtocol {
     var detailsInteractor: PresenterToInteractorFoodDetailsProtocol? { get set }
     var detailsView: PresenterToViewFoodDetailsProtocol? { get set }
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
     
 
 }
@@ -22,7 +22,7 @@ protocol PresenterToInteractorFoodDetailsProtocol {
     var networkService: InteractorToNetworkServiceProtocol? { get set }
     var detailsPresenter: InteractorToPresenteFoodDetailsProtcol? { get set }
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
     
 
 }

@@ -20,7 +20,7 @@ class MenuPresenter: ViewToPresenterMenuProtocol {
     }
    
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
+    func addToShoppingCart(food: Food, food_quantity: String) {
         menuInteractor?.addToShoppingCart(food: food, food_quantity: food_quantity)
     }
    
@@ -28,11 +28,11 @@ class MenuPresenter: ViewToPresenterMenuProtocol {
 
 extension MenuPresenter: InteractorToPresenterMenuProtocol {
     
-    func sendFoodList(foodList: Array<Yemekler>) {
+    func sendFoodList(foodList: Array<Food>) {
         menuView?.sendFoodList(foodList: foodList)
     }
     
-    func sendCartList(list: [SepetYemekler]) {
+    func sendCartList(list: [FoodCart]) {
         menuView?.sendCartList(list: list)
     }
 }

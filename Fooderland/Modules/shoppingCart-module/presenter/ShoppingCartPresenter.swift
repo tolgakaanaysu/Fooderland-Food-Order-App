@@ -18,11 +18,11 @@ class ShoppingCartPresenter: ViewToPresenterShoppingCartProtocol {
         shoppingCartInteractor?.deleteFoodInCart(sepet_yemek_id: sepet_yemek_id)
     }
     
-    func clearAllCart(list: [SepetYemekler]) {
+    func clearAllCart(list: [FoodCart]) {
         shoppingCartInteractor?.clearAllCart(list: list)
     }
     
-    func updateCart(food: SepetYemekler, quantity: Int) {
+    func updateCart(food: FoodCart, quantity: Int) {
         shoppingCartInteractor?.updateCart(food: food, quantity: quantity)
     }
 }
@@ -32,7 +32,7 @@ extension ShoppingCartPresenter: InteractorToPresenterShoppingCartProtocol {
         shoppingCartView?.sendTotalCost(total: total)
     }
     
-    func sendCartList(list: [SepetYemekler]) {
+    func sendCartList(list: [FoodCart]) {
         shoppingCartView?.sendCartList(list: list)
     }
 }

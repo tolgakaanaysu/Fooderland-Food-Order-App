@@ -16,21 +16,21 @@ protocol NetworkServiceToRestApiService {
     
     func deleteFoodInCart(sepet_yemek_id: String)
     
-    func clearAllCart(list: [SepetYemekler])
+    func clearAllCart(list: [FoodCart])
     
-    func checkAndAddFootInCart(food: Yemekler, adet: String)
+    func checkAndAddFootInCart(food: Food, adet: String)
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
     
-    func updateCart(food: SepetYemekler, quantity: Int)
+    func updateCart(food: FoodCart, quantity: Int)
     
    
 }
 
 protocol RestApiServiceToNetworkService {
-    func sendFoodList(foodList: [Yemekler])
+    func sendFoodList(foodList: [Food])
     
-    func sendCartList(foodList: Array<SepetYemekler>)
+    func sendCartList(foodList: Array<FoodCart>)
     
     func sendTotalCost(total: String)
 }

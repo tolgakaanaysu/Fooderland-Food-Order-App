@@ -12,7 +12,7 @@ class FoodDetailsInteractor: PresenterToInteractorFoodDetailsProtocol {
     var detailsPresenter: InteractorToPresenteFoodDetailsProtcol?
     var networkService: InteractorToNetworkServiceProtocol?
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
+    func addToShoppingCart(food: Food, food_quantity: String) {
         networkService?.checkAndAddFootInCart(food: food, adet: food_quantity)
        
     }

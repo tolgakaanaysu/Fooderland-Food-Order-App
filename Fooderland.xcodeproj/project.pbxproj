@@ -60,10 +60,10 @@
 		7855E8ED28D323FC0091F5B4 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8E628D323FB0091F5B4 /* FirebaseService.swift */; };
 		7855E8EE28D323FC0091F5B4 /* NetworkServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8E728D323FB0091F5B4 /* NetworkServiceProtocols.swift */; };
 		7855E8F228D324040091F5B4 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F128D324040091F5B4 /* ExtensionColors.swift */; };
-		7855E8FA28D324450091F5B4 /* SepetYemeklerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F628D324450091F5B4 /* SepetYemeklerResponse.swift */; };
-		7855E8FB28D324450091F5B4 /* YemeklerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F728D324450091F5B4 /* YemeklerResponse.swift */; };
-		7855E8FC28D324450091F5B4 /* Yemekler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F828D324450091F5B4 /* Yemekler.swift */; };
-		7855E8FD28D324450091F5B4 /* SepetYemekler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F928D324450091F5B4 /* SepetYemekler.swift */; };
+		7855E8FA28D324450091F5B4 /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F628D324450091F5B4 /* CartResponse.swift */; };
+		7855E8FB28D324450091F5B4 /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F728D324450091F5B4 /* FoodResponse.swift */; };
+		7855E8FC28D324450091F5B4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F828D324450091F5B4 /* Food.swift */; };
+		7855E8FD28D324450091F5B4 /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855E8F928D324450091F5B4 /* FoodCart.swift */; };
 		7855E90028D324AB0091F5B4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E8FF28D324AB0091F5B4 /* Alamofire */; };
 		7855E90328D324D30091F5B4 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90228D324D30091F5B4 /* ProgressHUD */; };
 		7855E90628D3258D0091F5B4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7855E90528D3258D0091F5B4 /* FirebaseAuth */; };
@@ -129,10 +129,10 @@
 		7855E8E628D323FB0091F5B4 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		7855E8E728D323FB0091F5B4 /* NetworkServiceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocols.swift; sourceTree = "<group>"; };
 		7855E8F128D324040091F5B4 /* ExtensionColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
-		7855E8F628D324450091F5B4 /* SepetYemeklerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepetYemeklerResponse.swift; sourceTree = "<group>"; };
-		7855E8F728D324450091F5B4 /* YemeklerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YemeklerResponse.swift; sourceTree = "<group>"; };
-		7855E8F828D324450091F5B4 /* Yemekler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yemekler.swift; sourceTree = "<group>"; };
-		7855E8F928D324450091F5B4 /* SepetYemekler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepetYemekler.swift; sourceTree = "<group>"; };
+		7855E8F628D324450091F5B4 /* CartResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
+		7855E8F728D324450091F5B4 /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
+		7855E8F828D324450091F5B4 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		7855E8F928D324450091F5B4 /* FoodCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCart.swift; sourceTree = "<group>"; };
 		7855E90E28D32C400091F5B4 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		7855E91228D32CEB0091F5B4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		7855E91628D5C9420091F5B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -588,10 +588,10 @@
 		7855E8F528D324450091F5B4 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7855E8F628D324450091F5B4 /* SepetYemeklerResponse.swift */,
-				7855E8F728D324450091F5B4 /* YemeklerResponse.swift */,
-				7855E8F828D324450091F5B4 /* Yemekler.swift */,
-				7855E8F928D324450091F5B4 /* SepetYemekler.swift */,
+				7855E8F628D324450091F5B4 /* CartResponse.swift */,
+				7855E8F728D324450091F5B4 /* FoodResponse.swift */,
+				7855E8F828D324450091F5B4 /* Food.swift */,
+				7855E8F928D324450091F5B4 /* FoodCart.swift */,
 				7855E91628D5C9420091F5B4 /* User.swift */,
 			);
 			path = Entity;
@@ -693,11 +693,11 @@
 				7855E8EB28D323FB0091F5B4 /* RestApiProtocol.swift in Sources */,
 				7855E8C328D323E30091F5B4 /* PaymentVC.swift in Sources */,
 				7855E8ED28D323FC0091F5B4 /* FirebaseService.swift in Sources */,
-				7855E8FC28D324450091F5B4 /* Yemekler.swift in Sources */,
-				7855E8FA28D324450091F5B4 /* SepetYemeklerResponse.swift in Sources */,
+				7855E8FC28D324450091F5B4 /* Food.swift in Sources */,
+				7855E8FA28D324450091F5B4 /* CartResponse.swift in Sources */,
 				7855E8D928D323E30091F5B4 /* OrderStateVC.swift in Sources */,
 				7855E8C028D323E30091F5B4 /* MenuRouter.swift in Sources */,
-				7855E8FB28D324450091F5B4 /* YemeklerResponse.swift in Sources */,
+				7855E8FB28D324450091F5B4 /* FoodResponse.swift in Sources */,
 				7855E8BF28D323E30091F5B4 /* MenuInteractor.swift in Sources */,
 				7855E8B828D323E30091F5B4 /* LoginInteractor.swift in Sources */,
 				7855E8CF28D323E30091F5B4 /* CartCell.swift in Sources */,
@@ -718,7 +718,7 @@
 				7855E8BD28D323E30091F5B4 /* MenuCollectionViewCell.swift in Sources */,
 				7855E8E928D323FB0091F5B4 /* RestApiService.swift in Sources */,
 				7855E8C828D323E30091F5B4 /* FoodDetailsVC.swift in Sources */,
-				7855E8FD28D324450091F5B4 /* SepetYemekler.swift in Sources */,
+				7855E8FD28D324450091F5B4 /* FoodCart.swift in Sources */,
 				7855E8B928D323E30091F5B4 /* LoginRouter.swift in Sources */,
 				7855E8C628D323E30091F5B4 /* FoodDetailsProtocols.swift in Sources */,
 				7855E8D128D323E30091F5B4 /* ShoppingCartRouter.swift in Sources */,

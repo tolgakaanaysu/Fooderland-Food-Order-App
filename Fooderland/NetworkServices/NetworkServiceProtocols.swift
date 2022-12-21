@@ -21,13 +21,13 @@ protocol InteractorToNetworkServiceProtocol {
     
     func deleteFoodInCart(sepet_yemek_id: String)
     
-    func clearAllCart(list: [SepetYemekler])
+    func clearAllCart(list: [FoodCart])
     
-    func checkAndAddFootInCart(food: Yemekler, adet: String)
+    func checkAndAddFootInCart(food: Food, adet: String)
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
     
-    func updateCart(food: SepetYemekler, quantity: Int)
+    func updateCart(food: FoodCart, quantity: Int)
     
     func createUser(email: String, password: String, username: String)
     
@@ -39,9 +39,9 @@ protocol InteractorToNetworkServiceProtocol {
 
 protocol NetworkServiceToMenuInteractorProtocol {
 
-    func sendFoodList(foodList: Array<Yemekler>)
+    func sendFoodList(foodList: Array<Food>)
     
-    func sendCartList(foodList: Array<SepetYemekler>)
+    func sendCartList(foodList: Array<FoodCart>)
     
 }
 
@@ -49,7 +49,7 @@ protocol NetworkServiceToShoppingCartInteractorProtocol {
   
     func sendTotalCost(total: String)
     
-    func sendCartList(foodList: Array<SepetYemekler>)
+    func sendCartList(foodList: Array<FoodCart>)
     
 }
 

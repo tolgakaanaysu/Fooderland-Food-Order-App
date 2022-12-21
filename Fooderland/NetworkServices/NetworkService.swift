@@ -31,19 +31,19 @@ class NetworkService: InteractorToNetworkServiceProtocol {
         restApiService?.deleteFoodInCart(sepet_yemek_id: sepet_yemek_id)
     }
     
-    func clearAllCart(list: [SepetYemekler]) {
+    func clearAllCart(list: [FoodCart]) {
         restApiService?.clearAllCart(list: list)
     }
     
-    func checkAndAddFootInCart(food: Yemekler, adet: String) {
+    func checkAndAddFootInCart(food: Food, adet: String) {
         restApiService?.checkAndAddFootInCart(food: food, adet: adet)
     }
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
+    func addToShoppingCart(food: Food, food_quantity: String) {
         restApiService?.addToShoppingCart(food: food, food_quantity: food_quantity)
     }
     
-    func updateCart(food: SepetYemekler, quantity: Int) {
+    func updateCart(food: FoodCart, quantity: Int) {
         restApiService?.updateCart(food: food, quantity: quantity)
     }
     
@@ -61,11 +61,11 @@ class NetworkService: InteractorToNetworkServiceProtocol {
 }
 
 extension NetworkService: RestApiServiceToNetworkService {
-    func sendFoodList(foodList: [Yemekler]) {
+    func sendFoodList(foodList: [Food]) {
         menuInteractor?.sendFoodList(foodList: foodList)
     }
     
-    func sendCartList(foodList: Array<SepetYemekler>) {
+    func sendCartList(foodList: Array<FoodCart>) {
         shoppingCartInteractor?.sendCartList(foodList: foodList)
     }
     

@@ -16,7 +16,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet var odemeYapButton: UIButton!
     @IBOutlet var liraLabel: UILabel!
     var shoppingCartPresenter: ViewToPresenterShoppingCartProtocol?
-    var shoppingCartList: [SepetYemekler] = []
+    var shoppingCartList: [FoodCart] = []
     var permision: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +56,15 @@ extension ShoppingCartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let food = shoppingCartList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartCell
-        cell.foodImageView.kf.setImage(with: takeImages(yemek_resim_adi: food.yemek_resim_adi!))
-        cell.foodNameLabel.text = food.yemek_adi
-        cell.foodQuantityLabel.text = food.yemek_siparis_adet
-        cell.foodPriceLabel.text = food.yemek_fiyat! + " ₺"
+        cell.foodImageView.kf.setImage(with: takeImages(yemek_resim_adi: food.imageName!))
+        cell.foodNameLabel.text = food.name
+        cell.foodQuantityLabel.text = food.quaintity
+        cell.foodPriceLabel.text = food.price! + " ₺"
         cell.food = food
         cell.shoppingCartPresenter = shoppingCartPresenter
         cell.totalLabel = totalCost
-        let fiyat = Int(food.yemek_fiyat!)!
-        let adet = Int(food.yemek_siparis_adet!)!
+        let fiyat = Int(food.price!)!
+        let adet = Int(food.quaintity!)!
         cell.foodTotalLabel.text = "\(fiyat * adet) ₺"
 
         return cell
@@ -87,7 +87,7 @@ extension ShoppingCartVC: UITableViewDelegate, UITableViewDataSource {
         let food = shoppingCartList[indexPath.row]
         let delete = UIContextualAction(style: .destructive,
                                         title: "Sil",
-                                        handler: {_,_,_ in self.shoppingCartPresenter?.deleteFoodInCart(sepet_yemek_id: food.sepet_yemek_id!)})
+                                        handler: {_,_,_ in self.shoppingCartPresenter?.deleteFoodInCart(sepet_yemek_id: food.id!)})
         return UISwipeActionsConfiguration(actions: [delete])
     }
 }
@@ -100,7 +100,7 @@ extension ShoppingCartVC: PresenterToViewShoppingCartProtocol {
         totalCost.text = total
     }
     
-    func sendCartList(list: [SepetYemekler]) {
+    func sendCartList(list: [FoodCart]) {
         shoppingCartList = list
         
         if shoppingCartList.count == 0 {

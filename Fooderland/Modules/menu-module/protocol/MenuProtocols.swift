@@ -15,7 +15,7 @@ protocol ViewToPresenterMenuProtocol {
     
     func getFoodInCart()
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
 }
 
 protocol PresenterToInteractorMenuProtocol {
@@ -26,22 +26,22 @@ protocol PresenterToInteractorMenuProtocol {
     
     func getFoodInCart()
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String)
+    func addToShoppingCart(food: Food, food_quantity: String)
 }
 
 protocol InteractorToPresenterMenuProtocol {
     
-    func sendFoodList(foodList: Array<Yemekler>)
+    func sendFoodList(foodList: Array<Food>)
     
-    func sendCartList(list: [SepetYemekler])
+    func sendCartList(list: [FoodCart])
    
 }
 
 protocol PresenterToViewMenuProtocol {
     
-    func sendFoodList(foodList: Array<Yemekler>)
+    func sendFoodList(foodList: Array<Food>)
     
-    func sendCartList(list: [SepetYemekler])
+    func sendCartList(list: [FoodCart])
    
 }
 

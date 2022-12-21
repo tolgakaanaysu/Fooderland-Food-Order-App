@@ -22,7 +22,7 @@ class MenuInteractor: PresenterToInteractorMenuProtocol {
         networkService?.getFoodsInCart()
     }
     
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
+    func addToShoppingCart(food: Food, food_quantity: String) {
         networkService?.checkAndAddFootInCart(food: food, adet: food_quantity)
     }
 }
@@ -30,11 +30,11 @@ class MenuInteractor: PresenterToInteractorMenuProtocol {
 extension MenuInteractor: NetworkServiceToMenuInteractorProtocol {
 
     
-    func sendFoodList(foodList: Array<Yemekler>) {
+    func sendFoodList(foodList: Array<Food>) {
         menuPresenter?.sendFoodList(foodList: foodList)
     }
     
-    func sendCartList(foodList: Array<SepetYemekler>) {
+    func sendCartList(foodList: Array<FoodCart>) {
         menuPresenter?.sendCartList(list: foodList)
     }
     

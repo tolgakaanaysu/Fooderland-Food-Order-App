@@ -15,7 +15,7 @@ class FoodDetailsVC: UIViewController {
     @IBOutlet var quantityStepper: UIStepper!
     @IBOutlet var foodQuantityLabel: UILabel!
     @IBOutlet var favoriteButton: UIButton!
-    var food: Yemekler?
+    var food: Food?
     var foodIsFavorite: Bool?
     var detailsPresenter: ViewToPresenterFoodDetailsProtocol?
     
@@ -25,11 +25,11 @@ class FoodDetailsVC: UIViewController {
         
         guard let food = food else { return }
             
-            let urlStr = "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi!)"
+            let urlStr = "http://kasimadalan.pe.hu/yemekler/resimler/\(food.imageName!)"
             let url = URL(string: urlStr)
             foodImageView.kf.setImage(with: url)
-            foodNameLabel.text = food.yemek_adi
-            foodPriceLabel.text = "\(food.yemek_fiyat!) ₺"
+            foodNameLabel.text = food.name
+            foodPriceLabel.text = "\(food.price!) ₺"
         
     }
    

@@ -21,8 +21,8 @@ class RestApiService: NetworkServiceToRestApiService {
             if let data = response.data {
                 do {
                     
-                    let yemeklerResponse = try JSONDecoder().decode(YemeklerResponse.self, from: data)
-                    if let list = yemeklerResponse.yemekler {
+                    let yemeklerResponse = try JSONDecoder().decode(FoodResponse.self, from: data)
+                    if let list = yemeklerResponse.foods {
                         self.networkService?.sendFoodList(foodList: list)
                     }
                 } catch  {
@@ -48,8 +48,8 @@ class RestApiService: NetworkServiceToRestApiService {
             if let data = response.data {
                 do {
                     
-                    let sepetYemek = try JSONDecoder().decode(SepetYemeklerResponse.self, from: data)
-                    if let list = sepetYemek.sepet_yemekler {
+                    let sepetYemek = try JSONDecoder().decode(CartResponse.self, from: data)
+                    if let list = sepetYemek.foodcart {
                         self.networkService?.sendCartList(foodList: list)
                         self.calculateTotalCost(list: list)
                         
@@ -91,7 +91,7 @@ extension RestApiService {
         getFoodsInCart()
     }
     
-    func clearAllCart(list: [SepetYemekler]) {
+    func clearAllCart(list: [FoodCart]) {
         guard self.username != nil else {
             print("nil username")
             return
@@ -99,7 +99,7 @@ extension RestApiService {
         let urlStr = RESTAPI.sepettenSil
         for food in list {
             
-            let params = ["sepet_yemek_id": food.sepet_yemek_id,
+            let params = ["sepet_yemek_id": food.id,
                           "kullanici_adi": username]
             
             AF.request(urlStr,method: .post, parameters: params).response{ response in
@@ -123,7 +123,7 @@ extension RestApiService {
 extension RestApiService {
     
      // There is no update api. So if added product is in  cart, delete it and upload a new one
-     func checkAndAddFootInCart(food: Yemekler, adet: String) {
+     func checkAndAddFootInCart(food: Food, adet: String) {
          guard self.username != nil else {
              print("nil username")
              return
@@ -135,13 +135,13 @@ extension RestApiService {
              if let data = response.data {
                  var sum = Int(adet) ?? 0
                  do {
-                     let sepetYemek = try JSONDecoder().decode(SepetYemeklerResponse.self, from: data)
-                     if let list = sepetYemek.sepet_yemekler {
+                     let sepetYemek = try JSONDecoder().decode(CartResponse.self, from: data)
+                     if let list = sepetYemek.foodcart {
                         
                          for yemek in list {
-                             if yemek.yemek_adi == food.yemek_adi {
-                                 sum += Int(yemek.yemek_siparis_adet!)!
-                                 self.deleteFoodInCart(sepet_yemek_id: yemek.sepet_yemek_id!)
+                             if yemek.name == food.name {
+                                 sum += Int(yemek.quaintity!)!
+                                 self.deleteFoodInCart(sepet_yemek_id: yemek.id!)
                              }
                          }
                          
@@ -156,15 +156,15 @@ extension RestApiService {
      }
      
     
-     func addToShoppingCart(food: Yemekler, food_quantity: String) {
+     func addToShoppingCart(food: Food, food_quantity: String) {
          guard self.username != nil else {
              print("nil username")
              return
          }
          let urlStr = RESTAPI.sepeteEkle
-         let params: Parameters = ["yemek_adi": food.yemek_adi!,
-                                   "yemek_resim_adi": food.yemek_resim_adi!,
-                                   "yemek_fiyat": Int(food.yemek_fiyat!)!,
+         let params: Parameters = ["yemek_adi": food.name!,
+                                   "yemek_resim_adi": food.imageName!,
+                                   "yemek_fiyat": Int(food.price!)!,
                                    "yemek_siparis_adet": Int(food_quantity)!,
                                    "kullanici_adi": username!]
          
@@ -184,10 +184,10 @@ extension RestApiService {
 
 //MARK: - UPDATE
 extension RestApiService {
-    func updateCart(food: SepetYemekler, quantity: Int){
+    func updateCart(food: FoodCart, quantity: Int){
         
         let deleteApi = RESTAPI.sepettenSil
-        let deleteParams = ["sepet_yemek_id": food.sepet_yemek_id,
+        let deleteParams = ["sepet_yemek_id": food.id,
                       "kullanici_adi": username]
         
         AF.request(deleteApi,method: .post, parameters: deleteParams).response{ response in
@@ -203,9 +203,9 @@ extension RestApiService {
         }
         
         let addApi = RESTAPI.sepeteEkle
-        let params: Parameters = ["yemek_adi": food.yemek_adi!,
-                                  "yemek_resim_adi": food.yemek_resim_adi!,
-                                  "yemek_fiyat": Int(food.yemek_fiyat!)!,
+        let params: Parameters = ["yemek_adi": food.name!,
+                                  "yemek_resim_adi": food.imageName!,
+                                  "yemek_fiyat": Int(food.price!)!,
                                   "yemek_siparis_adet": quantity,
                                   "kullanici_adi": username!]
         
@@ -234,11 +234,11 @@ extension RestApiService {
         return total
     }
     
-    func calculateTotalCost(list: [SepetYemekler]) {
+    func calculateTotalCost(list: [FoodCart]) {
         var total = 0
         for i in list {
-            total += calculateFoodCost(food_quantitiy: i.yemek_siparis_adet!,
-                                       food_price: i.yemek_fiyat!)
+            total += calculateFoodCost(food_quantitiy: i.quaintity!,
+                                       food_price: i.price!)
         }
         networkService?.sendTotalCost(total: String(total))
     }

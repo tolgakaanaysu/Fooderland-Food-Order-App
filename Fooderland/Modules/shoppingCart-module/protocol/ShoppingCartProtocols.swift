@@ -16,9 +16,9 @@ protocol ViewToPresenterShoppingCartProtocol {
     
     func deleteFoodInCart(sepet_yemek_id: String)
     
-    func clearAllCart(list: [SepetYemekler])
+    func clearAllCart(list: [FoodCart])
     
-    func updateCart(food: SepetYemekler, quantity: Int)
+    func updateCart(food: FoodCart, quantity: Int)
 }
 
 //Presenter -> Interactor
@@ -30,21 +30,21 @@ protocol PresenterToInteractorShoppingCartProtocol {
     
     func deleteFoodInCart(sepet_yemek_id: String)
     
-    func clearAllCart(list: [SepetYemekler])
+    func clearAllCart(list: [FoodCart])
     
-    func updateCart(food: SepetYemekler, quantity: Int)
+    func updateCart(food: FoodCart, quantity: Int)
 
 }
 
 //Interactor -> Presenter
 protocol InteractorToPresenterShoppingCartProtocol {
-    func sendCartList(list: [SepetYemekler])
+    func sendCartList(list: [FoodCart])
     func sendTotalCost(total: String)
 }
 
 //Presenter -> View
 protocol PresenterToViewShoppingCartProtocol {
-    func sendCartList(list: [SepetYemekler])
+    func sendCartList(list: [FoodCart])
     func sendTotalCost(total: String)
 }
 

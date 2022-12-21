@@ -14,9 +14,9 @@ class MenuVC: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var sordSegmentedControl: UISegmentedControl!
     var menuPresenter: ViewToPresenterMenuProtocol?
-    var filterFoodList: [Yemekler] = []
-    var mainFoodList: [Yemekler] = []
-    var shoppingCartList: [SepetYemekler] = []
+    var filterFoodList: [Food] = []
+    var mainFoodList: [Food] = []
+    var shoppingCartList: [FoodCart] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +41,13 @@ class MenuVC: UIViewController {
    
         switch sender.selectedSegmentIndex {
         case 0:
-            filterFoodList.sort(by: {$0.yemek_id! < $1.yemek_id!})
+            filterFoodList.sort(by: {$0.id! < $1.id!})
         case 1:
-            filterFoodList.sort(by: {Int($0.yemek_fiyat!)! < Int($1.yemek_fiyat!)!})
+            filterFoodList.sort(by: {Int($0.price!)! < Int($1.price!)!})
         case 2:
-            filterFoodList.sort(by: {Int($0.yemek_fiyat!)! > Int($1.yemek_fiyat!)!})
+            filterFoodList.sort(by: {Int($0.price!)! > Int($1.price!)!})
         case 3:
-            filterFoodList.sort(by: {$0.yemek_adi! < $1.yemek_adi!})
+            filterFoodList.sort(by: {$0.name! < $1.name!})
         default:
             print("default")
         }
@@ -65,9 +65,9 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let food = filterFoodList[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuVCIdentifiers.menuCollectionViewCell.rawValue, for: indexPath) as! MenuCollectionViewCell
-        cell.foodPriceLabel.text = "\(food.yemek_fiyat ?? "N/A") ₺"
-        cell.foodNameLabel.text = food.yemek_adi
-        cell.foodImageView.kf.setImage(with: takeImages(yemek_resim_adi: food.yemek_resim_adi!),
+        cell.foodPriceLabel.text = "\(food.price ?? "N/A") ₺"
+        cell.foodNameLabel.text = food.name
+        cell.foodImageView.kf.setImage(with: takeImages(yemek_resim_adi: food.imageName!),
                                        placeholder: UIImage.actions)
     
         cell.layer.cornerRadius = 30
@@ -82,7 +82,7 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetay" {
-            if let food = sender as? Yemekler {
+            if let food = sender as? Food {
                 let detayVC = segue.destination as! FoodDetailsVC
                 detayVC.food = food
             }
@@ -109,7 +109,7 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource {
 //MARK: - PRESENTER PROTOCOL
 extension MenuVC: PresenterToViewMenuProtocol {
     
-    func sendCartList(list: [SepetYemekler]) {
+    func sendCartList(list: [FoodCart]) {
         shoppingCartList = list
 //        print(shoppingCartList.count)
 //        if shoppingCartList.count == 0 {
@@ -120,7 +120,7 @@ extension MenuVC: PresenterToViewMenuProtocol {
         
     }
     
-    func sendFoodList(foodList: Array<Yemekler>) {
+    func sendFoodList(foodList: Array<Food>) {
         mainFoodList = foodList
         filterFoodList = foodList
         DispatchQueue.main.async {
@@ -134,7 +134,7 @@ extension MenuVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             filterFoodList = mainFoodList.filter { yemekler in
-                yemekler.yemek_adi!.lowercased().contains(searchText.lowercased())
+                yemekler.name!.lowercased().contains(searchText.lowercased())
             }
             
         } else {

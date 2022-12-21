@@ -21,11 +21,11 @@ final class ShoppinCartInteractor: PresenterToInteractorShoppingCartProtocol {
         networkService?.deleteFoodInCart(sepet_yemek_id: sepet_yemek_id)
     }
     
-    func clearAllCart(list: [SepetYemekler]) {
+    func clearAllCart(list: [FoodCart]) {
         networkService?.clearAllCart(list: list)
     }
     
-    func updateCart(food: SepetYemekler, quantity: Int) {
+    func updateCart(food: FoodCart, quantity: Int) {
         networkService?.updateCart(food: food, quantity: quantity)
     }
     
@@ -39,7 +39,7 @@ extension ShoppinCartInteractor: NetworkServiceToShoppingCartInteractorProtocol 
         shoppingCartPresenter?.sendTotalCost(total: total)
     }
     
-    func sendCartList(foodList: Array<SepetYemekler>) {
+    func sendCartList(foodList: Array<FoodCart>) {
         shoppingCartPresenter?.sendCartList(list: foodList)
     }
 }
