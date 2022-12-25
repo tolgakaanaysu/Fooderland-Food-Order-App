@@ -18,19 +18,19 @@ final class LoginRouter: PresenterToRouterLoginProtocol {
         ref.loginPresenter = presenter
         
         //Presenter
-        ref.loginPresenter?.loginView = ref
-        ref.loginPresenter?.loginInteractor = interactor
+        presenter.loginInteractor = interactor
+        presenter.loginView = ref
         
         //Interactor
-        ref.loginPresenter?.loginInteractor?.networkService = network
-        ref.loginPresenter?.loginInteractor?.loginPresenter = presenter
+        interactor.networkService = network
+        interactor.loginPresenter = presenter
         
         //Network Service
-        ref.loginPresenter?.loginInteractor?.networkService?.firebaseService = firebase
-        ref.loginPresenter?.loginInteractor?.networkService?.loginInteractor = interactor
+        network.loginInteractor = interactor
+        network.firebaseService = firebase
         
         //Firebase
-        ref.loginPresenter?.loginInteractor?.networkService?.firebaseService?.networkService = network
+        firebase.networkService = network
         
         
     }

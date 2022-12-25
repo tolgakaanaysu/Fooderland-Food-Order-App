@@ -9,27 +9,27 @@ import Foundation
 
 final class RegisterRouter: PresenterToRouterRegisterProtocol {
     static func createModule(ref :RegisterVC) {
-        let presenter = RegisterPresenter()
-        let interactor = RegisterInteractor()
-        let network = NetworkService()
-        let firebase = FirebaseService()
+        lazy var presenter = RegisterPresenter()
+        lazy var interactor = RegisterInteractor()
+        lazy var network = NetworkService()
+        lazy var firebase = FirebaseService()
         
         // View
         ref.registerPresenter = presenter
         
         //Presenter//
-        ref.registerPresenter?.registerInteractor = interactor
-        ref.registerPresenter?.registerView = ref
+        presenter.registerInteractor = interactor
+        presenter.registerView = ref
         
         //Interactor
-        ref.registerPresenter?.registerInteractor?.networkService = network
-        ref.registerPresenter?.registerInteractor?.registerPresenter = presenter
+        interactor.networkService = network
+        interactor.registerPresenter = presenter
         
         //NetworkService
-        ref.registerPresenter?.registerInteractor?.networkService?.firebaseService = firebase
-        ref.registerPresenter?.registerInteractor?.networkService?.registerInteractor = interactor
+        network.registerInteractor = interactor
+        network.firebaseService = firebase
         
         //Firebase
-        ref.registerPresenter?.registerInteractor?.networkService?.firebaseService?.networkService = network
+        firebase.networkService = network
     }
 }
