@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--OnboardingVC-->
+        <!--Onboarding View Controller-->
         <scene sceneID="KmN-s2-yMI">
             <objects>
-                <viewController id="jqQ-Bc-zOg" customClass="OnboardingVC" customModule="Fooderland" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jqQ-Bc-zOg" customClass="OnboardingViewController" customModule="Fooderland" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tv6-ZR-s45">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,22 +111,11 @@
                         <outlet property="collectionView" destination="qXx-vP-MGz" id="JC6-Vo-2pU"/>
                         <outlet property="pageControl" destination="Z6e-r8-hbj" id="Uj7-UY-xHW"/>
                         <outlet property="startButton" destination="J8z-Yg-jEf" id="4oE-LW-Bp8"/>
-                        <segue destination="llG-UN-8v1" kind="show" identifier="goLoginVC" id="6iz-ey-Jgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1b-sR-DtO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-19" y="58"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="7cN-cf-Q3a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" id="llG-UN-8v1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="MZX-ag-lRK"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qDu-KQ-PSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="479" y="58"/>
         </scene>
     </scenes>
     <resources>

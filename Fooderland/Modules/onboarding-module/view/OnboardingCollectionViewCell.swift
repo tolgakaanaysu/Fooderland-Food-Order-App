@@ -8,7 +8,6 @@
 import UIKit
 
 final class OnboardingCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var sloganLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var sloganLabel: UILabel!
 }

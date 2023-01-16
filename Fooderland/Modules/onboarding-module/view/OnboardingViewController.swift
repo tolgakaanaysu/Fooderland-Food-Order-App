@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OnboardingVC: UIViewController {
+final class OnboardingViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -15,9 +15,11 @@ final class OnboardingVC: UIViewController {
     
     var onboardingSlider: [OnboardingModel] = []
     var currentPage = 0
+    var presenter: OnboardingPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -29,11 +31,16 @@ final class OnboardingVC: UIViewController {
         onboardingSlider.append(slider2)
         onboardingSlider.append(slider3)
         
+        navigationItem.title = "onboarding 2"
+        tabBarItem.title = "onboarding 1"
+        navigationItem.backButtonTitle = "onboarding back"
+        
     }
     
     @IBAction func startButton(_ sender: Any) {
         if currentPage == onboardingSlider.count - 1 {
-            performSegue(withIdentifier: "goLoginVC", sender: nil)
+//            performSegue(withIdentifier: "goLoginVC", sender: nil)
+            presenter?.clickedStartButton()
         } else {
             currentPage += 1
             pageControl.currentPage = currentPage
@@ -43,7 +50,7 @@ final class OnboardingVC: UIViewController {
     }
 }
 
-extension OnboardingVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return onboardingSlider.count
