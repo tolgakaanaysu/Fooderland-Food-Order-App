@@ -10,31 +10,15 @@ import Firebase
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        navigationBarApperanceConfigure()
+        
         
         FirebaseApp.configure()
         return true
     }
 
-    func navigationBarApperanceConfigure(){
-        
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationBarAppearance.backgroundColor = .systemIndigo
-        
-        
-        let titleAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationBarAppearance.titleTextAttributes = titleAttribute as [NSAttributedString.Key : Any]
-        
-        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-        UINavigationBar.appearance().tintColor = .white
-        
-    }
 
     // MARK: UISceneSession Lifecycle
 
