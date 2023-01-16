@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JL8-Hv-yHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LvI-XC-Cak">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,13 +13,13 @@
         <!--Fooderland-->
         <scene sceneID="OMt-Ys-lZG">
             <objects>
-                <viewController id="LvI-XC-Cak" customClass="MenuVC" customModule="Food_Order_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LvI-XC-Cak" customClass="MenuViewController" customModule="Fooderland" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8B2-np-A1z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Zc-flx">
-                                <rect key="frame" x="0.0" y="180" width="414" height="633"/>
+                                <rect key="frame" x="0.0" y="145" width="414" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dD9-sJ-uuJ">
                                     <size key="itemSize" width="287" height="326"/>
@@ -27,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuCollectionViewCell" id="s1c-a6-c7K" customClass="MenuCollectionViewCell" customModule="Food_Order_App" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuCollectionViewCell" id="s1c-a6-c7K" customClass="MenuCollectionViewCell" customModule="Fooderland" customModuleProvider="target">
                                         <rect key="frame" x="63.5" y="0.0" width="287" height="326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iEF-Mu-qe5">
@@ -88,11 +89,11 @@
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CC7-p8-FSl">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-aw-I5D">
-                                <rect key="frame" x="0.0" y="139" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="32"/>
                                 <color key="backgroundColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="0.40277746339507453" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Varsayılan"/>
@@ -128,90 +129,14 @@
                         <outlet property="collectionView" destination="XzZ-Zc-flx" id="QaY-eL-LSB"/>
                         <outlet property="searchBar" destination="CC7-p8-FSl" id="ED3-xw-AmJ"/>
                         <outlet property="sordSegmentedControl" destination="LBQ-aw-I5D" id="Nrz-eL-Eog"/>
-                        <segue destination="HBX-aa-hdL" kind="presentation" identifier="toDetay" id="fpm-iP-DBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGW-7m-GCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4989.8550724637689" y="319.41964285714283"/>
-        </scene>
-        <!--Detay-->
-        <scene sceneID="kPe-v0-MzA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Detay" id="HBX-aa-hdL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZHs-SS-cDa"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="82w-dC-zYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5723" y="319"/>
-        </scene>
-        <!--ShoppingCart-->
-        <scene sceneID="OAS-0E-cgf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ShoppingCart" id="cxA-DO-WWa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Wy5-bQ-RwL"/>
-                    <navigationItem key="navigationItem" id="DOy-oS-JFm"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cia-Mi-oHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3154" y="738"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="8hV-IA-D4X">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="JL8-Hv-yHR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="Mcg-eK-v7E">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="systemIndigoColor"/>
-                        <tabBarAppearance key="standardAppearance"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="aph-aa-Oc8" kind="relationship" relationship="viewControllers" id="IQZ-Na-mNl"/>
-                        <segue destination="cxA-DO-WWa" kind="relationship" relationship="viewControllers" id="Arq-6t-P6i"/>
-                        <segue destination="EyE-JD-FQV" kind="relationship" relationship="viewControllers" id="n1Y-co-cCY"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1lo-Hn-1ug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3238" y="319"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="xEW-ri-8Sz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="EyE-JD-FQV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EMW-GI-0HE"/>
-                    <navigationItem key="navigationItem" id="eH0-eG-Ekl"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ae-Z3-bL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3412" y="738"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="lI0-xL-lii">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aph-aa-Oc8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" image="list.bullet" catalog="system" id="H8X-Qg-ePY"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oh8-xS-k6b">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LvI-XC-Cak" kind="relationship" relationship="rootViewController" id="VQz-HF-cz1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2PM-Y0-ix8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4083" y="320"/>
+            <point key="canvasLocation" x="4455" y="331"/>
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
