@@ -5,22 +5,19 @@
 //  Created by Tolga Kağan Aysu on 2.09.2022.
 //
 
-import Foundation
+import UIKit
 
-final class FoodDetailsRouter:PresenterToRouterFoodDetailsProtocol {
-    static func createModule(ref: FoodDetailsVC) {
-        
-        // View
-        ref.detailsPresenter = FoodDetailsPresenter()
-        
-        // Presenter
-        ref.detailsPresenter?.detailsInteractor = FoodDetailsInteractor()
-        
-        //Interactor
-        ref.detailsPresenter?.detailsInteractor?.networkService = NetworkService()
-        
-        //NetworkService
-        ref.detailsPresenter?.detailsInteractor?.networkService?.restApiService = RestApiService()
-        
+final class FoodDetailsRouter: FoodDetailsRouterProtocol {
+    //MARK: - Property
+    private let view: UIViewController
+    
+    //MARK: - Init
+    init(view: UIViewController) {
+        self.view = view
+    }
+    
+    //MARK: - Methods
+    func dismissView() {
+        view.dismiss(animated: true)
     }
 }
