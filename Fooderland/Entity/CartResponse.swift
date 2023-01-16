@@ -7,8 +7,19 @@
 
 import Foundation
 
+//FIXME: Optionel All Models
 struct CartResponse: Codable {
-    var foodcart: [FoodCart]?
-    var success: Int?
+    let foodcart: [FoodCart]
+    let success: Int
     
+    enum CodingKeys: CodingKey {
+        case foodcart
+        case success
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.foodcart = try container.decodeIfPresent([FoodCart].self, forKey: .foodcart) ?? []
+        self.success = try container.decodeIfPresent(Int.self, forKey: .foodcart) ?? 0
+    }
 }
