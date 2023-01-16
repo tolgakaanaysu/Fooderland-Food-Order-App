@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    
     static var cellBackgroundColor: UIColor {
         return UIColor(named: "cellBackgroundColor") ?? .white
     }
@@ -17,5 +16,4 @@ extension UIColor {
     static var viewBackgroundColor: UIColor {
         return UIColor(named: "viewBackgroundColor") ?? .white
     }
-    
 }
