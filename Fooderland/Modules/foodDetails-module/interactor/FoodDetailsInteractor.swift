@@ -7,15 +7,27 @@
 
 
 import Foundation
-import Alamofire
-class FoodDetailsInteractor: PresenterToInteractorFoodDetailsProtocol {
-    var detailsPresenter: InteractorToPresenteFoodDetailsProtcol?
-    var networkService: InteractorToNetworkServiceProtocol?
-    
-    func addToShoppingCart(food: Yemekler, food_quantity: String) {
-        networkService?.checkAndAddFootInCart(food: food, adet: food_quantity)
-       
-    }
 
+final class FoodDetailsInteractor: FoodDetailsInteractorProtocol {
+    //MARK: - Property
+    private let service: NetworkServiceProtocol
+    weak var delegate: FoodDetailsInteractorDelegate?
     
+    //MARK: - Init
+    init(service: NetworkServiceProtocol) {
+        self.service = service
+    }
+    
+    //MARK: - Methods
+    func addToCart(food: Food, quantity: Int) {
+        service.addToShoppingCart(food: food, foodQuantity: quantity.toString()) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+                break
+            case.success(_):
+                self?.delegate?.addedFoodToCart()
+            }
+        }
+    }
 }

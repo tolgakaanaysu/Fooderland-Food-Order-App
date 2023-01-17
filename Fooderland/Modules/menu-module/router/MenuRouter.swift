@@ -5,31 +5,20 @@
 //  Created by Tolga Kağan Aysu on 2.09.2022.
 //
 
-import Foundation
+import UIKit
 
-class MenuRouter: PresenterToRouterMenuProtocol {
-    static func createModule(ref: MenuVC) {
-        let presenter = MenuPresenter()
-        let interactor = MenuInteractor()
-        let network = NetworkService()
-        let restApi = RestApiService()
-        
-        //View
-        ref.menuPresenter = presenter
-        
-        //Presneter
-        ref.menuPresenter?.menuView = ref
-        ref.menuPresenter?.menuInteractor = interactor
-        
-        //Interactor
-        ref.menuPresenter?.menuInteractor?.menuPresenter = presenter
-        ref.menuPresenter?.menuInteractor?.networkService = network
-        
-        //NetworkService
-        ref.menuPresenter?.menuInteractor?.networkService?.menuInteractor = interactor
-        
-        //RestApiService
-        ref.menuPresenter?.menuInteractor?.networkService?.restApiService = restApi
-        ref.menuPresenter?.menuInteractor?.networkService?.restApiService?.networkService = network
+final class MenuRouter: MenuRouterProtocol {
+    //MARK: - Property
+    private unowned let view: UIViewController
+    
+    //MARK: - Init
+    init(view: UIViewController) {
+        self.view = view
+    }
+    
+    //MARK: - Method
+    func navigate(to food: Food) {
+        let detailsVc = FoodDetailsBuilder.start(with: food)
+        view.present(detailsVc, animated: true)
     }
 }

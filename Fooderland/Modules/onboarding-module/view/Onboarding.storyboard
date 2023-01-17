@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jqQ-Bc-zOg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jqQ-Bc-zOg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--OnboardingVC-->
+        <!--Onboarding View Controller-->
         <scene sceneID="KmN-s2-yMI">
             <objects>
-                <viewController id="jqQ-Bc-zOg" customClass="OnboardingVC" customModule="Fooderland" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jqQ-Bc-zOg" customClass="OnboardingViewController" customModule="Fooderland" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tv6-ZR-s45">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qXx-vP-MGz">
-                                <rect key="frame" x="0.0" y="183" width="414" height="316"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="316"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="316" id="hpz-Ph-04M"/>
@@ -30,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="onboardingCell" id="nCQ-bo-YjH" customClass="OnboardingCollectionViewCell" customModule="Food_Order_App" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="onboardingCell" id="nCQ-bo-YjH" customClass="OnboardingCollectionViewCell" customModule="Fooderland" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-4" width="364" height="324"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Np-A5-esl">
@@ -85,7 +86,7 @@
                                 <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fooderland" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4L-vl-HBw">
-                                <rect key="frame" x="89.5" y="99" width="235.5" height="54"/>
+                                <rect key="frame" x="89.5" y="103" width="235.5" height="54"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -110,22 +111,11 @@
                         <outlet property="collectionView" destination="qXx-vP-MGz" id="JC6-Vo-2pU"/>
                         <outlet property="pageControl" destination="Z6e-r8-hbj" id="Uj7-UY-xHW"/>
                         <outlet property="startButton" destination="J8z-Yg-jEf" id="4oE-LW-Bp8"/>
-                        <segue destination="llG-UN-8v1" kind="show" identifier="goLoginVC" id="6iz-ey-Jgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1b-sR-DtO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-19" y="58"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="7cN-cf-Q3a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="llG-UN-8v1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="MZX-ag-lRK"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qDu-KQ-PSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="479" y="58"/>
         </scene>
     </scenes>
     <resources>

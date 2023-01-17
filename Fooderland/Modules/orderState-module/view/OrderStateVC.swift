@@ -7,7 +7,7 @@
 
 import UIKit
 import MapKit
-class OrderStateVC: UIViewController {
+final class OrderStateVC: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     var lm = CLLocationManager()

@@ -15,7 +15,7 @@ protocol ViewToPresenterLoginProtocol {
 //Presenter -> Interactor
 protocol PresenterToInteractorLoginProtocol {
     var loginPresenter: InteractorToPresenterLoginProtocol? { get set }
-    var networkService: InteractorToNetworkServiceProtocol? { get set }
+//    var networkService: InteractorToNetworkServiceProtocol? { get set }
     
     func signIn(email: String, password: String)
     

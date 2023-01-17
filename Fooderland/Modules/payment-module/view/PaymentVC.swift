@@ -7,7 +7,7 @@
 
 import UIKit
 import ProgressHUD
-class PaymentVC: UIViewController {
+final class PaymentVC: UIViewController {
 
     @IBOutlet var creditCardLabel: UILabel!
     

@@ -7,22 +7,22 @@
 
 import Foundation
 
-class LoginInteractor: PresenterToInteractorLoginProtocol {
-    var networkService: InteractorToNetworkServiceProtocol?
+final class LoginInteractor: PresenterToInteractorLoginProtocol {
+//    var networkService: InteractorToNetworkServiceProtocol?
     
     var loginPresenter: InteractorToPresenterLoginProtocol?
    
     
     func signIn(email: String, password: String) {
-        networkService?.signIn(email: email, password: password)
+//        networkService?.signIn(email: email, password: password)
     }
     func getUsername() {
-        networkService?.getUsername()
+//        networkService?.getUsername()
     }
 }
-
-extension LoginInteractor: NetworkServiceToLoginInteractorProtocol {
-    func sendError(error: Error?) {
-        loginPresenter?.sendError(error: error)
-    }
-}
+//
+//extension LoginInteractor: NetworkServiceToLoginInteractorProtocol {
+//    func sendError(error: Error?) {
+//        loginPresenter?.sendError(error: error)
+//    }
+//}

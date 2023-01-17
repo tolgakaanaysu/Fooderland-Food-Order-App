@@ -7,17 +7,10 @@
 
 import Foundation
 
-class User {
-    
+struct User {
     static var email: String?
     static var password: String?
     static var username: String?
     static var profilePhoto: String?
     
-    init(email: String, password: String, username: String, profilePhoto: String) {
-        User.email = email
-        User.password = password
-        User.username = username
-        User.profilePhoto = profilePhoto
-    }
 }

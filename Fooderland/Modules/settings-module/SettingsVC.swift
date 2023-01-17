@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 import ProgressHUD
-class SettingsVC: UIViewController {
+final class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

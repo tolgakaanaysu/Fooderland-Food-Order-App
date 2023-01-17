@@ -7,71 +7,43 @@
 
 import UIKit
 import Kingfisher
-class FoodDetailsVC: UIViewController {
 
+final class FoodDetailsVC: UIViewController {
+    //MARK: - IBOutlets
     @IBOutlet var foodImageView: UIImageView!
     @IBOutlet var foodNameLabel: UILabel!
     @IBOutlet var foodPriceLabel: UILabel!
     @IBOutlet var quantityStepper: UIStepper!
     @IBOutlet var foodQuantityLabel: UILabel!
-    @IBOutlet var favoriteButton: UIButton!
-    var food: Yemekler?
-    var foodIsFavorite: Bool?
-    var detailsPresenter: ViewToPresenterFoodDetailsProtocol?
+
+    //MARK: - Property
+    var presenter: FoodDetailsPresenterProtocol?
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        FoodDetailsRouter.createModule(ref: self)
-        
-        guard let food = food else { return }
-            
-            let urlStr = "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi!)"
-            let url = URL(string: urlStr)
-            foodImageView.kf.setImage(with: url)
-            foodNameLabel.text = food.yemek_adi
-            foodPriceLabel.text = "\(food.yemek_fiyat!) ₺"
-        
+        presenter?.viewDidLoad()
     }
    
-    
-    //MARK: - Favorite Button
-    @IBAction func favoriteButton(_ sender: Any) {
-        
-//        detailsPresenter?.addFavorite(food: food!)
-    }
-    
     //MARK: - Stepper
     @IBAction func quantityStepper(_ sender: UIStepper) {
-        foodQuantityLabel.text = String(Int(sender.value))
+        foodQuantityLabel.text = sender.value.toInt().toString()
     }
     
     //MARK: - Add To Shopping Cart
     @IBAction func addToShoppingCartButton(_ sender: Any) {
-        guard let food = food else { return }
-        
-        if quantityStepper.value > 0 {
-            self.dismiss(animated: true)
-            let stepperValue = String(Int(quantityStepper.value))
-            detailsPresenter?.addToShoppingCart(food: food,
-                                                    food_quantity: stepperValue)
-            quantityStepper.value = 0
-            foodQuantityLabel.text = "0"
-            
-        }
-        else {
-            print("Sıfırdan büyük değer giriniz...")
-        }
+            let stepperValue = quantityStepper.value.toInt()
+            presenter?.clickedAddToCart(value: stepperValue)
     }
 }
 
-extension FoodDetailsVC: PresenterToViewFoodDetailsProtocol {
-    func isFavorite(_ isFavorite: Bool) {
-        foodIsFavorite = isFavorite
-        if foodIsFavorite! {
-            favoriteButton.backgroundColor = .red
-        }
-        else {
-            favoriteButton.backgroundColor = .white
-        }
+//MARK: - FoodDetailsPresenterDelegate
+extension FoodDetailsVC: FoodDetailsPresenterDelegate {
+    func prepareComponent(with food: Food) {
+        let url = Endpoint.shared.foodImage(with: food.imageName)
+        print(url)
+        foodImageView.kf.setImage(with: url,placeholder: UIImage(systemName: "star.fill"))
+        foodNameLabel.text = food.name
+        foodPriceLabel.text = food.price + " ₺"
     }
 }
